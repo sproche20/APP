@@ -1,14 +1,8 @@
 
-import { PremioComponent } from './componente/premio/premio.component';
-import { EstudianteComponent } from './componente/estudiante/estudiante.component';
-import { FalloComponent } from './componente/fallo/fallo.component';
-import { FelicidadComponent } from './componente/felicidad/felicidad.component';
-import { GastoComponent } from './componente/gasto/gasto.component';
+
 
 //import { NotasComponent } from './notas/notas.component';
-import { AsistenciaComponent } from './asistencia/asistencia.component';
-import { DomoticaComponent } from './domotica/domotica.component';
-import { CronometroComponent } from './cronometro/cronometro.component';
+
 import { RegistroComponent } from './componente/registro/registro.component';
 
 //import { ServiciosComponent } from './componente/servicios/SrviciosComponent';
@@ -43,8 +37,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
   declarations: [
     AppComponent,InicioComponent,
     SemanalComponent,MusicSemComponent,FavoritosComponent,RecomendacionesComponent,UserComponent,
-    RegistroComponent,CronometroComponent,DomoticaComponent,AsistenciaComponent,
-    GastoComponent,FelicidadComponent,FalloComponent,EstudianteComponent,PremioComponent,],
+    RegistroComponent
+   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,RouterModule,FormsModule,AngularFireModule.initializeApp( environment.firebaseConfig),
   AngularFireAuthModule,AngularFirestoreModule,FormsModule,AngularFireStorageModule],
