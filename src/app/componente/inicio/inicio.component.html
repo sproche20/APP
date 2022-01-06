@@ -1,0 +1,70 @@
+
+<ion-header >
+  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon (click)="openMenu()" style="font-size: 30px;" name="reorder-three"></ion-icon>
+    </ion-buttons>
+    <ion-title>inicio</ion-title>
+    
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="background">
+
+  <ion-toolbar>
+  <ion-button color="primary">musica semanal</ion-button>
+  <ion-button slot="end" color="primary" onclick="window.location.href='/semanal'">ranking semanal</ion-button>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-button color="primary">recomendaciones</ion-button>
+    <ion-button slot="end" color="primary">favoritos</ion-button>
+    </ion-toolbar>
+  <div text-center align-items-center>
+    <h1 >VALORANOS</h1>
+  </div>
+  
+  <ion-item>
+    <script></script>
+
+    <ion-item ></ion-item>
+    <ion-label class="normal">
+      Musica:
+    </ion-label>
+    <ion-buttons slot="end">
+      
+      <ion-button>
+        <label for="audio_file">
+          <ion-icon name="musical-notes"></ion-icon>
+        </label>
+
+     
+        
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+
+    
+  <input  (change)="audio($event)" id="audio_file" type="file" accept="audio/*" />
+  <audio  id="audio_player"  controls></audio>
+  <ion-button style=" margin:30px" expand="full" color="dark"
+  (click)="guardarMusica()">
+  Guardar
+</ion-button>
+<ion-button style=" margin:30px" expand="full" color="dark"
+(click)="nuevo()">
+nuevo
+</ion-button>
+
+  
+<ion-item>
+  <ion-label>Titulo</ion-label>
+  <ion-input [(ngModel)]="newMusica.titulo"> </ion-input>
+</ion-item>
+  
+
+</ion-content>
+
+

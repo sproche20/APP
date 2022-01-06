@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-title>
+    domotica
+  </ion-title>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center"> 
+      <ion-col *ngFor="let foco of focos" size="5"  class="ion-text-center">
+        <div if (click)="pagar(foco)" *ngIf="foco.estado==true" class="foco-on">
+          {{foco.nombre}}
+        </div>
+        <div (click)="prender(foco)" *ngIf="foco.estado==false" class="foco-off">
+          {{foco.nombre}}
+
+        </div>
+      
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

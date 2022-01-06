@@ -1,0 +1,43 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-content >
+      <div class="menu">Menu</div>
+      <div class="imagen">
+        <img src="assets/music.png" alt="">
+        <ion-label>
+     
+        </ion-label>
+      </div>
+      <ion-list class="items" lines="none">
+        <ion-menu-toggle auto-hide="true">
+          <ion-item>
+            <ion-icon name="musical-notes" routerLink="semanal"></ion-icon> Musica Semanal
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle auto-hide="true">
+          <ion-item class="active">
+          <ion-icon name="musical-notes"></ion-icon>Ranking Semanal
+        </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle auto-hide="true">
+          <ion-item>
+            <ion-icon name="musical-notes"></ion-icon>recomendaciones
+          </ion-item>
+        </ion-menu-toggle>
+      
+        <ion-menu-toggle auto-hide="true">
+          <ion-item>
+            <ion-icon name="musical-notes"></ion-icon>favoritos
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="true">
+          <ion-item>
+            <ion-icon name="musical-notes"></ion-icon>Valoranos
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-app>

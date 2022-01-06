@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar> 
+    <ion-title  style="text-align: center;">Registro</ion-title>
+  </ion-toolbar>
+  <body  style="background-color:#044044;">
+    <ion-content style="text-align: center;
+    background-color:#093d41;">
+
+      <div style="text-align: center">
+        <p>
+          <img
+            src="https://w7.pngwing.com/pngs/927/243/png-transparent-music-song-arabesque-art-music-miscellaneous-blue-logo.png"
+            alt="alternatetext"
+            width="90"
+            height="100"
+            style="margin-top: 10px; margin-bottom: 10px"
+          />
+        </p>
+      </div>
+     <div>
+      <p><b style="font-size: 20px" type="text">Nombres:</b></p>
+      <p>
+        <input
+          [(ngModel)]="datos.nombre"
+          type="text"
+          size="25"
+          style="
+            background: rgb(248, 250, 249);
+            color: rgb(3, 3, 3);
+            font-weight: bold;
+            padding: 3px;
+            border: 3px solid rgb(5, 40, 43);
+            margin-top: -6px;
+            margin-bottom: -10px;
+          "
+        />
+      </p>
+      <b style="font-size: 20px" type="text">Apellidos:</b>
+      <p>
+        <input
+          [(ngModel)]="datos.apellido"
+          type="text"
+          size="25"
+          style="
+            background: rgb(248, 250, 249);
+            color: rgb(3, 3, 3);
+            font-weight: bold;
+            padding: 3px;
+            border: 3px solid rgb(5, 40, 43);
+            margin-top: -6px;
+            margin-bottom: -10px;
+          "
+        />
+      </p>
+      <b style="font-size: 20px" type="text">correo:</b>
+      <p>
+        <input
+          [(ngModel)]="datos.correo"
+          type="email"
+          id="email"
+          pattern=".+@globex\.com"
+          size="25"
+          style="
+            background: rgb(248, 250, 249);
+            color: rgb(3, 3, 3);
+            font-weight: bold;
+            padding: 3px;
+            border: 3px solid rgb(5, 40, 43);
+            margin-top: -6px;
+            margin-bottom: -10px;
+          "
+        />
+      </p>
+      <b style="font-size: 20px" type="text">
+        contraseña:
+      </b>
+    <p>
+      <input
+      [(ngModel)]="datos.password"
+      type="password"
+      size="25"
+      pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*"
+      style="
+        background: rgb(248, 250, 249);
+        color: rgb(16, 17, 17);
+        font-weight: bold;
+        padding: 3px;
+        border: 3px solid rgb(5, 40, 43);
+        margin-top: 8px;
+        margin-bottom: 5px;
+      "
+    />
+    
+    </p>
+     </div>
+     <div>
+      <ion-button
+      slot="end"
+      color="primary"
+      onclick="window.location.href='/user'"
+      >login</ion-button>
+    <ion-button color="primary" (click)="registrar()">registrarse</ion-button>
+     </div>
+    </ion-content>
+    
+    
+
+  </body>
+</ion-header>

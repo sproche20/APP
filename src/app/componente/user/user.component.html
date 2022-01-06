@@ -1,0 +1,19 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">LOGIN</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div style="text-align: center;">
+ <p><img src="https://w7.pngwing.com/pngs/927/243/png-transparent-music-song-arabesque-art-music-miscellaneous-blue-logo.png" alt="alternatetext" width="90" height="100" style=" margin-top:10px; margin-bottom:10px"></p>
+  <P><img src="https://toppng.com/uploads/preview/user-account-management-logo-user-icon-11562867145a56rus2zwu.png" alt="alternatetext" width="30" height="40" style=" margin-top:10px; margin-bottom:-12px"  >
+  <input [(ngModel)]="credenciales.correo" type="text" name="usuario" style="background:rgb(248, 250, 249); color:rgb(3, 3, 3);font-weight:bold; padding: 3px; border:3px solid rgb(5, 40, 43);margin-top:10px;margin-bottom:10px; " ></P>
+ <p><img src="https://images.vexels.com/media/users/3/136261/isolated/preview/9e3e2706ee96a036c0d2ec18e3b24c8c-icono-de-llave-redonda.png" alt="alternatetext" width="30" height="60" style=" margin-top:-10px; margin-bottom:-25px"  >
+  <input [(ngModel)]="credenciales.password" type="password" name="usuario" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" style="background:rgb(248, 250, 249); color: rgb(16, 17, 17); font-weight:bold; padding:3px; border:3px solid rgb(5, 40, 43); margin-top:8px; margin-bottom:5px;" ></p> 
+ <ion-button  (click)="login()"  color="primary">iniciar sesion</ion-button>
+ <ion-button slot="end" color="primary" onclick="window.location.href='/registro'">registro</ion-button>
+
+</div>
+</ion-content>
+
