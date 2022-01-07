@@ -13,23 +13,16 @@
 
 
 <ion-content class="background">
+  <ion-item>
+    
+      <h1>
+        NUEVA CANCION
+      </h1>
+    
+  </ion-item>
 
-  <ion-toolbar>
-  <ion-button color="primary">musica semanal</ion-button>
-  <ion-button slot="end" color="primary" onclick="window.location.href='/semanal'">ranking semanal</ion-button>
-  </ion-toolbar>
-  <ion-toolbar>
-    <ion-button color="primary">recomendaciones</ion-button>
-    <ion-button slot="end" color="primary">favoritos</ion-button>
-    </ion-toolbar>
-  <div text-center align-items-center>
-    <h1 >VALORANOS</h1>
-  </div>
-  
   <ion-item>
     <script></script>
-
-    <ion-item ></ion-item>
     <ion-label class="normal">
       Musica:
     </ion-label>
@@ -39,15 +32,22 @@
         <label for="audio_file">
           <ion-icon name="musical-notes"></ion-icon>
         </label>
-
-     
-        
+        <input  (change)="audio($event)" style="display: none;" id="audio_file" type="file" accept="audio/*" />
       </ion-button>
     </ion-buttons>
   </ion-item>
-
-    
-  <input  (change)="audio($event)" id="audio_file" type="file" accept="audio/*" />
+  <ion-item>
+    <ion-label>Titulo</ion-label>
+    <ion-input [(ngModel)]="newMusica.titulo"> </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>interprete</ion-label>
+    <ion-input [(ngModel)]="newMusica.interprete"> </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>album</ion-label>
+    <ion-input [(ngModel)]="newMusica.album"> </ion-input>
+  </ion-item>
   <audio  id="audio_player"  controls></audio>
   <ion-button style=" margin:30px" expand="full" color="dark"
   (click)="guardarMusica()">
@@ -57,12 +57,21 @@
 (click)="nuevo()">
 nuevo
 </ion-button>
+<ion-item *ngFor="let musica of musicas">
+  <ion-label class="normal"> {{musica.titulo}} </ion-label>
+  <ion-buttons slot="end">
+    <ion-button (click)="newMusica=musica" >
+      <ion-icon name="create"></ion-icon>
+     </ion-button>
+    <ion-button (click)="deletemusic(musica)" >
+      <ion-icon slot="icon-only" color="danger" name="trash"></ion-icon>
+     </ion-button>
+  </ion-buttons>
+
+</ion-item>
 
   
-<ion-item>
-  <ion-label>Titulo</ion-label>
-  <ion-input [(ngModel)]="newMusica.titulo"> </ion-input>
-</ion-item>
+
   
 
 </ion-content>

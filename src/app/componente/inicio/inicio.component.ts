@@ -39,6 +39,7 @@ newFile: any;
   
   
     ngOnInit() {
+      this.getMusicas();
             this.nuevo();
 
   }
@@ -53,18 +54,30 @@ newFile: any;
     this.firestore.createDoc(this.newMusica, this.path, this.newMusica.id);
     this.interaction.presentToast('guardado exitoso');
   }
+  getMusicas(){
+    this.firestore.getCollection<Musica>(this.path).subscribe( res=>{
+      this.musicas=res;
+    })
+ 
+  }
+  deletemusic(musica:Musica){
+    this.firestore.deleteDoc(this.path,musica.id)
+      
+  }
+  
   
 
 
 
-  async audio(event) {
-   
-
+  async audio(event:any ) {
+    console.log(event);
    if (event.target.files && event.target.files[0]) {
     this.newFile=event.target.files[0];
       const file = URL.createObjectURL(event.target.files[0]); 
       console.log("file ", file);
-      console.log("name ", this.newFile.name)
+      console.log("name ", this.newFile.name);
+      
+
       this.newMusica.titulo = this.newFile.name
       
       let audio_player = document.getElementById("audio_player") as HTMLAudioElement
@@ -88,6 +101,8 @@ newFile: any;
     this.enableNewMusica=true;
     this.newMusica={
       titulo: 'nombre',
+      interprete:' ',
+      album:'',
       musica: null,
       id: this.firestore.getId()
     }

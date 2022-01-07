@@ -9,6 +9,8 @@ perfil:'visitante'|'admin'
 
 export interface Musica{
     titulo: string,
+    interprete:string,
+    album:string,
     musica: string,
     id:string
  
