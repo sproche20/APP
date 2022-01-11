@@ -13,7 +13,7 @@
 
 
 <ion-content class="background">
-  <ion-item>
+  <ion-item style="text-align: center;" >
     
       <h1>
         NUEVA CANCION
@@ -37,15 +37,15 @@
     </ion-buttons>
   </ion-item>
   <ion-item>
-    <ion-label>Titulo</ion-label>
+    <ion-label>Titulo:</ion-label>
     <ion-input [(ngModel)]="newMusica.titulo"> </ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>interprete</ion-label>
+    <ion-label>interprete:</ion-label>
     <ion-input [(ngModel)]="newMusica.interprete"> </ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>album</ion-label>
+    <ion-label>album:</ion-label>
     <ion-input [(ngModel)]="newMusica.album"> </ion-input>
   </ion-item>
   <audio  id="audio_player"  controls></audio>
