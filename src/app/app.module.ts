@@ -1,6 +1,5 @@
 
 
-
 //import { NotasComponent } from './notas/notas.component';
 
 import { RegistroComponent } from './componente/registro/registro.component';
@@ -13,6 +12,8 @@ import { UserComponent } from './componente/user/user.component';
 import { SemanalComponent } from './componente/semanal/semanal.component';
 import { environment } from './../environments/environment';
 import { FormsModule } from '@angular/forms';
+
+
 
 import { InicioComponent } from './componente/inicio/inicio.component';
 
@@ -29,6 +30,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { ListmusicaComponent } from './componente/listmusica/listmusica.component';
 
 
 
@@ -38,7 +40,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     AppComponent,
     InicioComponent,
     SemanalComponent,MusicSemComponent,FavoritosComponent,RecomendacionesComponent,UserComponent,
-    RegistroComponent
+    RegistroComponent,ListmusicaComponent
+    
    ],
   entryComponents: [],
   imports: [

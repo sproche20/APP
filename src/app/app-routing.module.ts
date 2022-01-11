@@ -5,10 +5,12 @@ import { MusicSemComponent } from './componente/musicsem/musicsem.component';
 import { RecomendacionesComponent } from './componente/recomendaciones/recomendaciones.component';
 import { SemanalComponent } from './componente/semanal/semanal.component';
 
+
 import { InicioComponent } from './componente/inicio/inicio.component';
 import { NgModule, Component } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {  UserComponent } from './componente/user/user.component';
+import { ListmusicaComponent } from './componente/listmusica/listmusica.component';
 
 const routes: Routes = [
   {
@@ -31,6 +33,10 @@ const routes: Routes = [
   },
   {
     path:'registro',component:RegistroComponent
+  },
+
+  {
+    path:'listmusica',component:ListmusicaComponent
   },
   
 ];
