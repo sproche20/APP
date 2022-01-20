@@ -1,3 +1,4 @@
+import { ReproductorComponent } from './componente/reproductor/reproductor.component';
 
 
 //import { NotasComponent } from './notas/notas.component';
@@ -40,7 +41,7 @@ import { ListmusicaComponent } from './componente/listmusica/listmusica.componen
     AppComponent,
     InicioComponent,
     SemanalComponent,MusicSemComponent,FavoritosComponent,RecomendacionesComponent,UserComponent,
-    RegistroComponent,ListmusicaComponent 
+    RegistroComponent,ListmusicaComponent, ReproductorComponent
    ],
   entryComponents: [],
   imports: [

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { MenuController } from '@ionic/angular';
 import { Musica } from '../models/models';
+import { EventEmitter } from 'stream';
 
 
 @Component({
@@ -16,6 +17,8 @@ import { Musica } from '../models/models';
 
 export class InicioComponent implements OnInit {
 private path ='musicas/';
+newImage='';
+newfile='';
 musicas:Musica[]=[]
 newMusica:Musica;
 /*newMusica:Musica={
@@ -49,10 +52,18 @@ newFile: any;
   async guardarMusica(){
     const path='musicas';
     const name=this.newMusica.titulo;
+    
     const res= await this.firestorageService.uploadMusic( this.newMusica.musica,path,name );
+    const resp= await this.firestorageService.uploadImage(this.newFile,path,name);
     this.newMusica.musica= res;
+    this.newMusica.portada=resp;
     this.firestore.createDoc(this.newMusica, this.path, this.newMusica.id);
     this.interaction.presentToast('guardado exitoso');
+    /**---------------------------------------------------- */
+    
+    
+    
+
   }
   getMusicas(){
     this.firestore.getCollection<Musica>(this.path).subscribe( res=>{
@@ -64,11 +75,6 @@ newFile: any;
     this.firestore.deleteDoc(this.path,musica.id)
       
   }
-  
-  
-
-
-
   async audio(event:any ) {
     console.log(event);
    if (event.target.files && event.target.files[0]) {
@@ -76,10 +82,8 @@ newFile: any;
       const file = URL.createObjectURL(event.target.files[0]); 
       console.log("file ", file);
       console.log("name ", this.newFile.name);
-      
-
       this.newMusica.titulo = this.newFile.name
-      
+     
       let audio_player = document.getElementById("audio_player") as HTMLAudioElement
       audio_player.src = file; 
       audio_player.play();
@@ -103,11 +107,28 @@ newFile: any;
       titulo: 'nombre',
       interprete:' ',
       album:'',
-      musica: null,
+      musica: '',
+      portada:'',
       id: this.firestore.getId()
     }
 
  
+
+  }
+
+  async newImageUpload(event:any){
+    if (event.target.files && event.target.files[0]) {
+      this.newFile= event.target.files[0];
+      const reader= new FileReader();
+      reader.onload=((image)=>{
+        this.newMusica.portada=image.target.result as string;
+      });
+      reader.readAsDataURL(event.target.files[0]);
+      
+    }
+
+ 
+    
 
   }
 

@@ -48,7 +48,25 @@
     <ion-label>album:</ion-label>
     <ion-input [(ngModel)]="newMusica.album"> </ion-input>
   </ion-item>
-  <audio  id="audio_player"  controls></audio>
+  <ion-item>
+    <script></script>
+    <ion-label class="normal">
+      portada:
+    </ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+        <label for="file-upload">
+          <ion-icon slot="icon-only" name="images"></ion-icon>
+        </label>
+        <input (change)="newImageUpload($event)"  style="display: none;" id="file-upload" type="file" accept="image/*" />
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <ion-item>
+    <img class="image" [src]="newMusica.portada">
+  </ion-item>
+  <audio [src]="newMusica.musica" controls></audio>
+  <audio id="audio_player" controls controls="controls" preload="preload"></audio>
   <ion-button style=" margin:30px" expand="full" color="dark"
   (click)="guardarMusica()">
   Guardar

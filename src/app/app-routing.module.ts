@@ -1,3 +1,4 @@
+import { ReproductorComponent } from './componente/reproductor/reproductor.component';
 
 import { RegistroComponent } from './componente/registro/registro.component';
 import { FavoritosComponent } from './componente/favoritos/favoritos.component';
@@ -37,6 +38,9 @@ const routes: Routes = [
 
   {
     path:'listmusica',component:ListmusicaComponent
+  },
+  {
+    path:'repMusica',component:ReproductorComponent
   },
   
 ];
