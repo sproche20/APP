@@ -52,9 +52,9 @@ newFile: any;
   async guardarMusica(){
     const path='musicas';
     const name=this.newMusica.titulo;
-    
+    const names=this.newMusica.interprete;
     const res= await this.firestorageService.uploadMusic( this.newMusica.musica,path,name );
-    const resp= await this.firestorageService.uploadImage(this.newFile,path,name);
+    const resp= await this.firestorageService.uploadImage(this.newFile,path,names);
     this.newMusica.musica= res;
     this.newMusica.portada=resp;
     this.firestore.createDoc(this.newMusica, this.path, this.newMusica.id);
@@ -108,6 +108,7 @@ newFile: any;
       interprete:' ',
       album:'',
       musica: '',
+      /*nomportada:'',*/
       portada:'',
       id: this.firestore.getId()
     }

@@ -12,6 +12,7 @@ export interface Musica{
     interprete:string,
     album:string,
     musica: string,
+    /*nomportada:string,*/
     portada:string,
     id:string
  
