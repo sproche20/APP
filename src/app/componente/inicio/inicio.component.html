@@ -1,27 +1,26 @@
 
 <ion-header >
   
-  <ion-toolbar>
+  <ion-toolbar class="header">
     <ion-buttons slot="start">
       <ion-icon (click)="openMenu()" style="font-size: 30px;" name="reorder-three"></ion-icon>
     </ion-buttons>
-    <ion-title>inicio</ion-title>
-    
-
+    <ion-title>inicio</ion-title>  
   </ion-toolbar>
+  
 </ion-header>
 
+<ion-content>
+  <div class="menudes">
+    <div class="menudes">
+      <a href="/inicio">Registro  Semanal</a>
+      <a href="/regrecomendados">Registro  populares</a>
+      <a href="/regtop" >Registro Top</a>
+      <div class="marca"></div>
+      </div>
+    </div>
 
-<ion-content class="background">
-  <ion-item style="text-align: center;" >
-    
-      <h1>
-        NUEVA CANCION
-      </h1>
-    
-  </ion-item>
-
-  <ion-item>
+  <ion-item >
     <script></script>
     <ion-label class="normal">
       Musica:
@@ -63,18 +62,22 @@
     </ion-buttons>
   </ion-item>
   <ion-item>
-    <img class="image" [src]="newMusica.portada">
+    <img  [src]="newMusica.portada" class="img">
   </ion-item>
-  <audio [src]="newMusica.musica" controls></audio>
-  <audio id="audio_player" controls controls="controls" preload="preload"></audio>
-  <ion-button style=" margin:30px" expand="full" color="dark"
-  (click)="guardarMusica()">
-  Guardar
+  <audio [src]="newMusica.musica" controls="controls" preload="preload"> </audio>
+  <audio id="audio_player3"  controls="controls" preload="preload"></audio>
+  <ion-item>
+    <ion-buttons slot="end">
+  <ion-button (click)="guardarMusica()">
+    <ion-icon name="save-outline"></ion-icon>
 </ion-button>
-<ion-button style=" margin:30px" expand="full" color="dark"
-(click)="nuevo()">
-nuevo
+<ion-button (click)="nuevo()">
+  <ion-icon name="document-text"></ion-icon>
 </ion-button>
+</ion-buttons>
+  </ion-item>
+
+
 <ion-item *ngFor="let musica of musicas">
   <ion-label class="normal"> {{musica.titulo}} </ion-label>
   <ion-buttons slot="end">

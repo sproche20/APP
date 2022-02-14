@@ -12,8 +12,15 @@ export interface Musica{
     interprete:string,
     album:string,
     musica: string,
-    /*nomportada:string,*/
+    nomportada:string,
     portada:string,
-    id:string
- 
+    id:string,
+    likes?:number;
+    forEach?(arg0: (musica: any) => Promise<void>);
+}
+export interface LikeI{
+    uid:string;
+    user:UserI;
+    fecha:any;
+    like:boolean;
 }

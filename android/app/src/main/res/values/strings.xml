@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Rock Music</string>
+    <string name="title_activity_main">Rock Music</string>
+    <string name="package_name">com.rokero.rock</string>
+    <string name="custom_url_scheme">com.rokero.rock</string>
+</resources>

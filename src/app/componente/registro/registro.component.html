@@ -1,24 +1,22 @@
+
 <ion-header>
-  <ion-toolbar> 
+  <ion-toolbar class="header"> 
     <ion-title  style="text-align: center;">Registro</ion-title>
   </ion-toolbar>
-  <body  style="background-color:#044044;">
-    <ion-content style="text-align: center;
-    background-color:#093d41;">
-
+</ion-header>
+    <ion-content  style="text-align: center;">
       <div style="text-align: center">
         <p>
-          <img
-            src="https://w7.pngwing.com/pngs/927/243/png-transparent-music-song-arabesque-art-music-miscellaneous-blue-logo.png"
-            alt="alternatetext"
-            width="90"
-            height="100"
+          <img src="assets/lign.png" alt=""
+          width="120"
+            height="120"
             style="margin-top: 10px; margin-bottom: 10px"
-          />
+          >
         </p>
       </div>
      <div>
-      <p><b style="font-size: 20px" type="text">Nombres:</b></p>
+      <p><font face="Tahoma" slot="start" font size="4.5" style="font-weight: bold;" font color="#DFDCDC">
+        Nombres:</font></p>
       <p>
         <input
           [(ngModel)]="datos.nombre"
@@ -35,7 +33,7 @@
           "
         />
       </p>
-      <b style="font-size: 20px" type="text">Apellidos:</b>
+      <font face="Tahoma" slot="start" font size="4.5" style="font-weight: bold;" font color="#DFDCDC">Apellidos:</font>
       <p>
         <input
           [(ngModel)]="datos.apellido"
@@ -52,7 +50,7 @@
           "
         />
       </p>
-      <b style="font-size: 20px" type="text">correo:</b>
+      <font face="Tahoma" slot="start" font size="4.5" style="font-weight: bold;" font color="#DFDCDC">correo:</font>
       <p>
         <input
           [(ngModel)]="datos.correo"
@@ -71,9 +69,9 @@
           "
         />
       </p>
-      <b style="font-size: 20px" type="text">
+      <font face="Tahoma" slot="start" font size="4.5" style="font-weight: bold;" font color="#DFDCDC">
         contraseña:
-      </b>
+      </font>
     <p>
       <input
       [(ngModel)]="datos.password"
@@ -94,16 +92,7 @@
     </p>
      </div>
      <div>
-      <ion-button
-      slot="end"
-      color="primary"
-      onclick="window.location.href='/user'"
-      >login</ion-button>
-    <ion-button color="primary" (click)="registrar()">registrarse</ion-button>
+      <img src="assets/liga .png"  width="150" height="70" style=" margin-top:-65px; margin-bottom:-65px" [routerLink]="['/user']">
+      <img src="assets/reg.png"  width="150" height="60" style=" margin-top:-60px; margin-bottom:-60px" (click)="registrar()" >      
      </div>
     </ion-content>
-    
-    
-
-  </body>
-</ion-header>

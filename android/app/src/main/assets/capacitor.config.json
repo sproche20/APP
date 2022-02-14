@@ -1,0 +1,6 @@
+{
+	"appId": "com.rokero.rock",
+	"appName": "Rock Music",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

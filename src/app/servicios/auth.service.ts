@@ -12,18 +12,22 @@ export class AuthService {
     return this.authfirebase.signInWithEmailAndPassword(correo,password)
   }
 
-   loginApp(){
-    this.login
-  }
- 
   logout(){
-    this.authfirebase.signOut
+    this.authfirebase.signOut();
   }
   registroUser(datos:UserI){
        return this.authfirebase.createUserWithEmailAndPassword(datos.correo,datos.password)
   }
   stateUuser(){
     return this.authfirebase.authState
+  }
+  async getUid(){
+    const user=await this.authfirebase.currentUser;
+    if (user){
+      return user.uid;
+    }else{
+      return null;
+    }
   }
 
 }

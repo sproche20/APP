@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "APP",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "com.rokero.rock",
+  "appName": "Rock Music",
+  "webDir": "www",
+  "bundledWebRuntime": false
 }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFireStorage, GetDownloadURLPipe } from '@angular/fire/compat/storage';
-import { resolve } from 'dns';
 import { finalize } from 'rxjs/operators';
 
 @Injectable({
@@ -29,7 +28,7 @@ export class FirestorageService {
      });
    };
 
-   uploadImage(file:any,path:string, nombre:string):Promise<string>{
+  uploadImage(file:any,path:string, nombre:string):Promise<string>{
      return new Promise(
       resolve=>{
         const filePath = path + '/' + nombre;

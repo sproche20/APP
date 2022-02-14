@@ -1,3 +1,23 @@
-<p>
-  favoritos works!
-</p>
+<ion-header >
+  
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-icon (click)="openMenu()" style="font-size: 30px;" name="reorder-three"></ion-icon>
+    </ion-buttons>
+    <ion-title>Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="menudes">
+    <div class="menudes">
+      <a  [routerLink]="['/semanal']" >Top C.nominadas</a>
+      <a  [routerLink]="['/musicsem']" >Top C.mas votadas</a>
+      <a  [routerLink]="['/listmusica']">Top sugerencias</a>
+      <div class="marca"></div>
+      </div>
+    </div>
+  <div *ngFor="let musica of favoritos">
+    <app-formato [musica]="musica"></app-formato>
+  </div>
+
+</ion-content>

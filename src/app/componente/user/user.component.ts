@@ -23,19 +23,22 @@ export class UserComponent implements OnInit {
     correo: null,
     password: null,
   }
-  async login(){
+  async  login(){
 
     //await this.interaction.presentLoading('ingresando...')
+    console.log('credenciales->',this.credenciales);
     const res= await this.auth.login(this.credenciales.correo,this.credenciales.password).catch(error=>{
       console.log("error");
       this.interaction.closeLoading();
       this.interaction.presentToast('usuario o contraseña invalido ')
+    
+    
     });
     if (res){
       console.log('res->',res);
       this.interaction.closeLoading();
        this.interaction.presentToast('Bienvenido');
-       this.router.navigate(['/inicio'])
+       this.router.navigate(['/listmusica'])
 
     }
   }

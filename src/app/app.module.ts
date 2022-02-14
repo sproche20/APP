@@ -1,4 +1,8 @@
-import { ReproductorComponent } from './componente/reproductor/reproductor.component';
+import { FormatoComponent } from './componente/formato/formato.component';
+
+import { RegtopComponent } from './componente/regtop/regtop.component';
+import { RegcomComponent } from './componente/regcom/regcom.component';
+import { MusicaComponent } from './componente/musica/musica.component';
 
 
 //import { NotasComponent } from './notas/notas.component';
@@ -6,8 +10,7 @@ import { ReproductorComponent } from './componente/reproductor/reproductor.compo
 import { RegistroComponent } from './componente/registro/registro.component';
 
 //import { ServiciosComponent } from './componente/servicios/SrviciosComponent';
-import { RecomendacionesComponent } from './componente/recomendaciones/recomendaciones.component';
-import { FavoritosComponent } from './componente/favoritos/favoritos.component';
+import { RecomendacionesComponent } from './componente/favoritos/favoritos.component';
 import { MusicSemComponent } from './componente/musicsem/musicsem.component';
 import { UserComponent } from './componente/user/user.component';
 import { SemanalComponent } from './componente/semanal/semanal.component';
@@ -32,6 +35,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ListmusicaComponent } from './componente/listmusica/listmusica.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 
@@ -40,8 +44,8 @@ import { ListmusicaComponent } from './componente/listmusica/listmusica.componen
   declarations: [
     AppComponent,
     InicioComponent,
-    SemanalComponent,MusicSemComponent,FavoritosComponent,RecomendacionesComponent,UserComponent,
-    RegistroComponent,ListmusicaComponent, ReproductorComponent
+    SemanalComponent,MusicSemComponent,RecomendacionesComponent,UserComponent,
+    RegistroComponent,ListmusicaComponent,MusicaComponent,RegcomComponent,RegtopComponent,FormatoComponent
    ],
   entryComponents: [],
   imports: [
@@ -53,7 +57,13 @@ import { ListmusicaComponent } from './componente/listmusica/listmusica.componen
   AngularFireAuthModule,
   AngularFirestoreModule,
   FormsModule,
-  AngularFireStorageModule],
+  AngularFireStorageModule,
+  ServiceWorkerModule.register('ngsw-worker.js', {
+    enabled: environment.production,
+    // Register the ServiceWorker as soon as the app is stable
+    // or after 30 seconds (whichever comes first).
+    registrationStrategy: 'registerWhenStable:30000'
+  })],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

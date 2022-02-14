@@ -1,0 +1,53 @@
+<ion-header >
+  
+    <ion-toolbar class="header">
+      <ion-buttons slot="start">
+        <ion-icon (click)="openMenu()" style="font-size: 30px;" name="reorder-three"></ion-icon>
+      </ion-buttons>
+      <ion-title>TOP 10 MUSICAS</ion-title>
+      
+  
+    </ion-toolbar>
+    
+  </ion-header>
+<ion-content>
+  <div class="menudes">
+    <div class="menudes">
+      <a  [routerLink]="['/semanal']" >Top C.nominadas</a>
+      <a  [routerLink]="['/musicsem']" >Top C.mas votadas</a>
+      <a  [routerLink]="['/listmusica']">Top sugerencias</a>
+      <div class="marca"></div>
+      </div>
+    </div>
+    <div class="foreground">
+        <img class="main-image" [src]="newMusica.portada">
+      </div>
+      <div class="music-player-box">
+        <audio  [src]="newMusica.musica" controls="controls" preload="preload"> </audio> 
+    </div>
+
+    
+    <ion-item *ngFor="let musica of musicas, let i=index " class="reaction"  >
+          <font face="Tahoma" slot="start" font size="5" style="font-weight: bold;" font color="DFDCDC#">
+            {{i+1}}
+          </font>
+         
+        <ion-avatar slot="start" >
+            <img [src]="musica.portada" (click)="newMusica=musica">
+          </ion-avatar>
+        <div>
+            <p style="margin:-2.5% 0;">
+             <font face="Tahoma" font size="5" style="font-weight: bold;" font color="#DFDCDC" (click)="newMusica=musica" >{{musica.titulo}}</font>
+            </p> 
+             <font face="Tahoma" font size="4" font color="silver" (click)="newMusica=musica">{{musica.interprete}}</font>
+           </div>
+
+        <ion-buttons slot="end">
+          
+          <ion-button (click)="newMusica=musica" >
+            <ion-icon name="play-circle"></ion-icon>
+           </ion-button>
+        </ion-buttons>
+      
+      </ion-item>  
+</ion-content>

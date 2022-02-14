@@ -1,0 +1,32 @@
+
+
+
+
+  <div *ngIf="musica">
+   
+    <div class="foreground">
+      <img class="main-image" [src]="musica.portada">
+    </div>
+    <div class="music-player-box">
+      <audio [src]="musica.musica" controls="controls" preload="preload"> </audio> 
+  </div>
+    <ion-item class="reaction">
+      <ion-avatar slot="start" >
+        <img [src]="musica.portada">
+      </ion-avatar>
+       <ion-button (click)="givelike(musica)"  slot="end">
+        <ion-icon slot="icon-only" *ngIf="!musica['likes']" style='width:40px; height:25px' name="heart-outline"></ion-icon>
+        <ion-icon slot="icon-only" *ngIf="musica['likes']" style='width:40px; height:25px '  name="heart" color="danger"></ion-icon>
+        <span>
+          {{musica.likes}}
+        </span>
+      </ion-button>
+      <div>
+        <p style="margin:-2.5% 0;">
+         <font face="Tahoma" font size="5" style="font-weight: bold;" font color="#DFDCDC" >{{musica.titulo}}</font>
+        </p> 
+         <font face="Tahoma" font size="4" font color="silver">{{musica.interprete}}</font>
+       </div>
+    </ion-item>
+  </div>
+

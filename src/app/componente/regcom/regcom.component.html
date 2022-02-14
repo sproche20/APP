@@ -1,0 +1,90 @@
+<ion-header >
+  
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-icon (click)="openMenu()" style="font-size: 30px;" name="reorder-three"></ion-icon>
+    </ion-buttons>
+    <ion-title>Registro  populares</ion-title>
+    
+
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content class="background">
+  <div class="menudes">
+    <a href="/inicio">Registro  Semanal</a>
+    <a href="/regrecomendados">Registro  populares</a>
+    <a href="/regtop" >Registro  Top</a>
+    <div class="marca"></div>
+    </div>
+
+  <ion-item>
+    <script></script>
+    <ion-label class="normal">
+      Musica:
+    </ion-label>
+    <ion-buttons slot="end">
+      
+      <ion-button>
+        <label for="audio_file">
+          <ion-icon name="musical-notes"></ion-icon>
+        </label>
+        <input  (change)="audio($event)" style="display: none;" id="audio_file" type="file" accept="audio/*" />
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <ion-item>
+    <ion-label>Titulo:</ion-label>
+    <ion-input [(ngModel)]="newMusica.titulo"> </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>interprete:</ion-label>
+    <ion-input [(ngModel)]="newMusica.interprete"> </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>album:</ion-label>
+    <ion-input [(ngModel)]="newMusica.album"> </ion-input>
+  </ion-item>
+  <ion-item>
+    <script></script>
+    <ion-label class="normal">
+      portada:
+    </ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+        <label for="file-upload">
+          <ion-icon slot="icon-only" name="images"></ion-icon>
+        </label>
+        <input (change)="newImageUpload($event)"  style="display: none;" id="file-upload" type="file" accept="image/*" />
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <ion-item>
+    <img class="img" [src]="newMusica.portada">
+  </ion-item>
+  <audio [src]="newMusica.musica" controls="controls" preload="preload"> </audio>
+  <audio id="audio_player1"  controls="controls" preload="preload"></audio>
+  <ion-item>
+    <ion-buttons slot="end">
+  <ion-button (click)="guardarMusica()">
+    <ion-icon name="save-outline"></ion-icon>
+</ion-button>
+<ion-button (click)="nuevo()">
+  <ion-icon name="document-text"></ion-icon>
+</ion-button>
+</ion-buttons>
+  </ion-item>
+<ion-item *ngFor="let musica of musicas">
+  <ion-label class="normal"> {{musica.titulo}} </ion-label>
+  <ion-buttons slot="end">
+    <ion-button (click)="newMusica=musica" >
+      <ion-icon name="create"></ion-icon>
+     </ion-button>
+    <ion-button (click)="deletemusic(musica)" >
+      <ion-icon slot="icon-only" color="danger" name="trash"></ion-icon>
+     </ion-button>
+  </ion-buttons>
+
+</ion-item>
+</ion-content>

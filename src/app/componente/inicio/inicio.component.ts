@@ -1,3 +1,4 @@
+import { Musica } from './../models/models';
 import { FirestorageService } from './../../servicios/firestorage.service';
 import { InteractionService } from './../../servicios/interaction.service';
 
@@ -5,8 +6,7 @@ import { FirestoreService } from './../../servicios/firestore.service';
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { MenuController } from '@ionic/angular';
-import { Musica } from '../models/models';
-import { EventEmitter } from 'stream';
+
 
 
 @Component({
@@ -17,7 +17,7 @@ import { EventEmitter } from 'stream';
 
 export class InicioComponent implements OnInit {
 private path ='musicas/';
-newImage='';
+newimage='';
 newfile='';
 musicas:Musica[]=[]
 newMusica:Musica;
@@ -29,6 +29,7 @@ newMusica:Musica;
 }*/
 
 enableNewMusica=false;
+newImage: any;
 newFile: any;
 
   
@@ -37,7 +38,7 @@ newFile: any;
     private menu: MenuController,
     private interaction: InteractionService ,
     public firestorageService:FirestorageService) {
-
+ 
     }
   
   
@@ -52,9 +53,9 @@ newFile: any;
   async guardarMusica(){
     const path='musicas';
     const name=this.newMusica.titulo;
-    const names=this.newMusica.interprete;
-    const res= await this.firestorageService.uploadMusic( this.newMusica.musica,path,name );
-    const resp= await this.firestorageService.uploadImage(this.newFile,path,names);
+    const names=this.newMusica.nomportada;
+    const res= await this.firestorageService.uploadMusic( this.newFile,path,name);
+    const resp= await this.firestorageService.uploadImage(this.newImage,path,names);
     this.newMusica.musica= res;
     this.newMusica.portada=resp;
     this.firestore.createDoc(this.newMusica, this.path, this.newMusica.id);
@@ -66,6 +67,7 @@ newFile: any;
 
   }
   getMusicas(){
+    const path='musicas';
     this.firestore.getCollection<Musica>(this.path).subscribe( res=>{
       this.musicas=res;
     })
@@ -83,8 +85,7 @@ newFile: any;
       console.log("file ", file);
       console.log("name ", this.newFile.name);
       this.newMusica.titulo = this.newFile.name
-     
-      let audio_player = document.getElementById("audio_player") as HTMLAudioElement
+      let audio_player = document.getElementById("audio_player3") as HTMLAudioElement
       audio_player.src = file; 
       audio_player.play();
 
@@ -108,18 +109,16 @@ newFile: any;
       interprete:' ',
       album:'',
       musica: '',
-      /*nomportada:'',*/
+      nomportada:'',
       portada:'',
-      id: this.firestore.getId()
+      id: this.firestore.getId(),
     }
-
- 
-
   }
 
   async newImageUpload(event:any){
     if (event.target.files && event.target.files[0]) {
-      this.newFile= event.target.files[0];
+      this.newImage= event.target.files[0];
+      this.newMusica.nomportada = this.newImage.name
       const reader= new FileReader();
       reader.onload=((image)=>{
         this.newMusica.portada=image.target.result as string;

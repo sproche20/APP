@@ -44,7 +44,7 @@ export class RegistroComponent implements OnInit {
       await this.firestore.createDoc(this.datos,path,id).catch
       this.interaction.presentToast('registro exitoso');
       
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/semanal'])
     }
   }
 

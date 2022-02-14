@@ -1,19 +1,31 @@
 .menu{
-    height: 220px;
+    height: 300px;
     width: 350px;
     background: rgb(248, 183, 2);
-    background: linear-gradient(90deg, #0fecda 0%, #044f52 100%);
+    background: #fff url('../assets/universo.jpg') no-repeat center center / cover;
     box-shadow: 0px 1px 10 px rgba(252, 172, 24, 0.863);
     transform:  rotate(0deg);
     border-radius: 0px -10px -20px 70px;
-    margin-left: -20px;
+    margin-left: -45px;
     margin-top: -60px;
     margin-bottom: 20px;
+}
+.menus{
+    height: 600px;
+    width: 350px;
+    background: rgb(248, 183, 2);
+    background: #fff url('../assets/rock.png') no-repeat center center / cover;
+    box-shadow: 0px 1px 10 px rgba(252, 172, 24, 0.863);
+    transform:  rotate(0deg);
+    border-radius: 0px -10px -20px 70px;
+    margin-left: -40px;
+    margin-top: -30px;
+    margin-bottom: -10px;
 }
 .imagen{
     position: absolute;
     top:20px;
-    left: 60px;
+    left: 20px;
     display: flex;
     align-items: center;
     img{
@@ -44,3 +56,6 @@
         }
     }
 }
+ion-item{
+    --background: transparent;
+  }
